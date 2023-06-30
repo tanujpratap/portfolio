@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+  
+    font-family: "Be Vietnam Pro", sans-serif;
+    
+
+}
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+     scroll-behavior: smooth; 
+ 
+}
+:root {
+    --bgOrange: #e84949;
+  }
+.container{
+    width: 1200px;
+    margin: 0 auto;
+
+  
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1 rem;
+    flex-wrap: wrap;
+
+}
+.nav-logo img{
+    padding-top: 1rem;
+    width: 120px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.nav-items{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;
+}
+.nav-items div{
+    font-size:20px ;
+    font-weight: 500;
+    cursor:pointer;
+}
+.nav-items div a{
+    color: black;
+}
+a{
+    text-decoration: none;
+   
+}
+.nav-items div:hover{
+    transition:  0.8s;
+  font-weight: bold;
+}
+.hero-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1 rem;
+    padding-bottom: 8rem;
+}
+.faded-text{
+    position: absolute;
+    user-select: none;
+font-size: 7em;
+color: rgb(231, 231, 231);
+bottom: -16%;
+left: -2%;
+font-weight: bold;
+transition: all 3s;
+
+}
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+.hero-section-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+.role{
+    color: #4e45d5;
+    font-weight: 800;
+
+}
+.hero-section-subheading{
+    font-size: 45px;
+    line-height: 45px;
+}
+.hero-section-descryption{
+    margin-top: 1rem;
+width: 70%;
+font-weight: 500;
+}
+.button{
+    background-color: var(--bgOrange);
+    width: fit-content;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    box-shadow: 3px 5px 7px 0px #0000003f;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border: solid 3px transparent;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+ .button::before{
+    content: "";
+    background-color: #fff;
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0px;
+z-index: -1 ;
+transform: scaleX(0);
+transform-origin: left;
+transition: all 0.8s;
+
+
+ }
+ .button:hover::before{
+    transform: scaleX(1);
+   
+   
+ }
+ .button:hover{
+    border: solid 3px var(--bgOrange);
+    color: black;
+
+ }
+ #btn-bottom{
+    display: none;
+ }
+ 
+ .hero-section-right{
+    position:relative;
+
+ }
+ .absolute{
+    position:absolute;
+ }
+ .user-image{
+    padding:2.5rem;
+    filter:grayscale(1);
+    transition:all 1s;
+    animation: scaleimage 5s linear infinite;
+
+ }
+ .user-image img{
+    z-index:-9;
+    height: 300px;
+    width: 300px;
+ }
+ @keyframes scaleimage{
+    0%{
+filter: grayscale(0);
+transform: scale(1);
+    }
+    50%{
+transform: scale(1.1);
+filter: grayscale(1);
+box-shadow: 3px 3px 10px black;
+
+    }
+    100%{
+transform: scale(1);
+filter: grayscale(1);
+    }
+ }
+ .icon-dots{
+    z-index: 10;
+    bottom: -1rem;
+    right: 0;
+    animation-name: dotanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+ }
+ @keyframes dotanimation{
+    0%{
+transform: translateY(0px);
+    }
+    50%{
+transform: translateY(-15px);
+    }
+    100%{
+transform: translateY(0px);
+    }
+ }
+ .icon-cube{
+    z-index: 10;
+    top: -0.8em;
+    right: 1em;
+    animation-name: cuberotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+ }
+ @keyframes cuberotate{
+    0%{
+transform: rotateY(0deg) translateY(0px);
+    }
+    50%{
+        transform: rotateY(180deg) translateY(-12px);
+    }
+    100%{
+        transform: rotateY(360deg) translateY(0px);
+    }
+ }
+ .icon-circle{
+    z-index: 9;
+    bottom: 0em;
+    left: 0em;
+    animation-name: shakeeffect;
+    animation-duration:6s ;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+ @keyframes shakeeffect{
+    0%{
+left: 0;
+bottom: 0;
+    }
+    50%{
+left: 5%;
+bottom: 10%;
+    }
+    100%{
+        left: 0;
+        bottom: 0;
+    }
+ }
+ .icon-zigzak{
+    z-index: 9;
+    top: 1.5em;
+    left: -0.3em;
+    animation: zigzaganimation 5s ease-in  infinite;
+
+ }
+ @keyframes zigzaganimation{
+    50%{
+        top: 2%;
+        left: 5%;
+    }
+ }
+ .icon-plus{
+    z-index: 9;
+    top: -0.8em;
+    left: 50%;
+    animation: shakeeffectplus 5s ease-in infinite;
+ }
+ @keyframes shakeeffectplus{
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+}
+ 
+ 
+ 
+ 
+.skills{
+    display: inline-block;
+    margin-left: 440px;
+    margin-bottom: 50px;
+    color: #413f3fa0;
+    font-size: 35px;
+    margin-top: 10px;
+    border-bottom: 1px solid #141212b9;
+}
+
+.icon-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .icon {
+    border: 1px solid #d2494988;
+    padding: 17px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    gap: 10px;
+    justify-content: center;
+    transition: all 0.5s;
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+  .icon i {
+    font-size: 27px;
+  }
+  
+  #facebook {
+    color: #1771e6;
+    border: 1px solid #1771e6;
+  }
+  #facebook:hover {
+    background-color: #1771e6;
+    color: #fff;
+  }
+  
+  #twitter {
+    color: #1c99e6;
+    border: 1px solid #1c99e6;
+  }
+  #twitter:hover {
+    background-color: #1c99e6;
+    color: #fff;
+  }
+  
+  #instagram {
+    color: #cb2770;
+    border: 1px solid #cb2770;
+  }
+  #instagram:hover {
+    background-color: #cb2770;
+    color: #fff;
+  }
+  
+  #whatsapp {
+    color: #2fe664;
+    border: 1px solid #2fe664;
+  }
+  #whatsapp:hover {
+    background-color: #2fe664;
+    color: #fff;
+  }
+  
+  #telegram {
+    color: #0081c2;
+    border: 1px solid #0081c2;
+  }
+  #telegram:hover {
+    background-color: #0081c2;
+    color: #fff;
+  }
+  .social-media{
+    
+   
+    margin-left: 30%;
+    margin-bottom: 40px;
+    border: 2px solid #ffffff59;
+    width: 500px;
+    scale: 1;
+    background: #db949488;
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+  }
+  @media(max-width:400px){
+   .nav-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+   }
+   .nav-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+   }
+   .hero-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   
+    gap: 3rem;
+    margin: 4rem auto;
+    padding: 0 1 rem;
+    padding-bottom: 8rem;
+    margin-left: 30%;
+}
+.hero-section-descryption{
+    margin-top: 1rem;
+width: 50%;
+font-weight: 500;
+overflow: scroll;
+}
+
+.user-image img{
+   z-index:-9;
+   height: 250px;
+   width: 250px;
+   place-self: center;
+  
+}
+.faded-text{
+    position: absolute;
+    user-select: none;
+font-size: 4em;
+color: rgb(231, 231, 231);
+bottom: -8%;
+left: -2%;
+font-weight: bold;
+transition: all 3s;
+
+}
+.skills{
+    display: inline-block;
+   
+    margin-bottom: 50px;
+    color: #413f3fa0;
+    font-size: 25px;
+    margin-top: 10px;
+    border-bottom: 1px solid #141212b9;
+    align-items: center;
+    left: -2%;
+}
+.icon-container {
+   
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+   gap: 3px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .social-media{
+    
+   
+     margin-left: 40%; 
+   
+    margin-bottom: 40px;
+    border: 2px solid #ffffff59;
+    width: 250px;
+    scale: 1;
+    background: #db949488;
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+  }
+  .wrapper{
+    overflow-x: hidden;
+  }
+  }
+  
+
+ 
